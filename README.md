@@ -17,7 +17,7 @@ Tienda de videojuegos digitales desarrollada con **Angular 20, TypeScript, HTML 
 - `src/styles.css`: estilos globales y diseño adaptable.
 - `public/juegos/`: portadas SVG provisionales.
 
-## Sustituir juegos ficticios por reales
+## Sustituir juegos
 
 1. Copia la portada (JPG, PNG o WebP) dentro de `public/juegos/`.
 2. Abre `src/app/core/games.ts` y edita `name`, `genre`, `description`, `price` y `cover`.
