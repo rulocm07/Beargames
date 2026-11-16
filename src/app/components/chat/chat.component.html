@@ -1,0 +1,33 @@
+<button class="chat-fab" type="button" (click)="shop.chatOpen.set(!shop.chatOpen())"
+  [attr.aria-label]="shop.chatOpen() ? 'Cerrar chat' : 'Abrir chat'" [attr.aria-expanded]="shop.chatOpen()">
+  @if (shop.chatOpen()) { <span class="chat-close-mark">×</span> }
+  @else { <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+    <path d="M20 11.3a8 8 0 0 1-8 8H7l-4 2v-6.8A8 8 0 1 1 20 11.3Z" stroke="currentColor" stroke-width="1.9"
+      stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8 10h8m-8 4h5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+  </svg> }
+</button>
+@if (shop.chatOpen()) {
+<section class="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title">
+  <header class="chat-head">
+    <div>
+      <h2 id="chat-title">Asistente de chat</h2>
+      <p><span class="online-dot"></span> Asistente automático</p>
+    </div><button type="button" class="chat-head-close" (click)="shop.chatOpen.set(false)"
+      aria-label="Cerrar chat">×</button>
+  </header>
+  <div class="chat-messages" role="log" aria-live="polite">
+    @for (entry of messages(); track $index) {
+    <div class="message-row" [class.visitor]="entry.author === 'visitor'">
+      <div class="bubble">{{ entry.text }}<small>{{ entry.time }}</small></div>
+    </div>
+    }
+  </div>
+  <div class="chat-suggestions">@for (suggestion of suggestions; track suggestion) { <button type="button"
+      (click)="send(suggestion)">{{ suggestion }}</button> }</div>
+  <form class="chat-form" (submit)="submit($event)"><input type="text" [value]="message()" (input)="update($event)"
+      maxlength="500" placeholder="Escribe tu mensaje..." aria-label="Escribir mensaje al chat"><button type="submit"
+      aria-label="Enviar mensaje">➤</button></form>
+  <button class="reset-chat" type="button" (click)="reset()">Limpiar conversación</button>
+</section>
+}

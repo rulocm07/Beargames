@@ -1,0 +1,13 @@
+@if (shop.detail(); as game) {<div class="modal-backdrop" role="presentation" (click)="shop.detail.set(null)"></div>
+<section class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detail-title"><button type="button"
+        class="icon-close detail-close" aria-label="Cerrar detalles" (click)="shop.detail.set(null)">×</button><img
+        class="detail-cover" [src]="game.cover" [alt]="'Portada de ' + game.name" width="420" height="560">
+    <div class="detail-content"><span class="section-kicker">VIDEOJUEGO DIGITAL</span><span class="detail-platform">{{
+            game.genre }}</span>
+        <h2 id="detail-title">{{ game.name }}</h2>
+        <p>{{ game.description }}</p>
+        <div class="detail-price"><strong>{{ shop.money(game.price) }}</strong></div><button
+            class="button button-green detail-add" type="button" (click)="shop.add(game); shop.detail.set(null)">Añadir
+            al carrito <span aria-hidden="true">+</span></button>
+    </div>
+</section>}

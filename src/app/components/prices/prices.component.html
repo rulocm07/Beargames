@@ -1,0 +1,27 @@
+<section class="price-zone" id="precios" aria-labelledby="prices-title">
+    <div class="shell price-layout">
+        <div class="price-copy"><span class="section-kicker">PRECIOS CLAROS</span>
+            <h2 id="prices-title">Elige tu juego.<br><em>Conoce su precio.</em></h2>
+            <p>Consulta los precios fijos de nuestros videojuegos digitales. Todos los importes están expresados en
+                pesos mexicanos.</p>
+            <div class="price-highlights">
+                <div><strong>MXN</strong><span>Precios en pesos mexicanos</span></div>
+                <div><strong>Digital</strong><span>Catálogo de videojuegos digitales</span></div>
+            </div><a href="#catalogo" class="button button-green">Explorar catálogo <span
+                    aria-hidden="true">↗</span></a>
+        </div>
+        <div class="deals-panel">
+            <div class="deals-heading">
+                <div><span>CATÁLOGO</span>
+                    <h3>Lista de precios</h3>
+                </div>
+            </div>@for (game of games; track game.id; let i=$index) {<div class="deal-line"><span class="deal-rank">{{
+                    i+1 < 10 ? '0' : '' }}{{ i+1 }}</span><img [src]="game.cover" [alt]="'Portada de '+game.name"
+                            width="44" height="58" loading="lazy"><span class="deal-title"><strong>{{ game.name
+                                }}</strong><small>{{ game.genre }}</small></span><span class="deal-price">{{
+                            shop.money(game.price) }}</span><button type="button" class="deal-add"
+                            (click)="shop.add(game)" [attr.aria-label]="'Agregar '+game.name+' al carrito'">+</button>
+            </div>}
+        </div>
+    </div>
+</section>

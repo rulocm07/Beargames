@@ -1,0 +1,110 @@
+[
+  {
+    "id": "neon-drift",
+    "name": "Neon Drift",
+    "genre": "Carreras",
+    "price": 289,
+    "featured": true,
+    "cover": "/juegos/neon-drift.svg",
+    "description": "Corre por autopistas iluminadas y compite en circuitos futuristas con vehículos personalizables."
+  },
+  {
+    "id": "stellar-odyssey",
+    "name": "Stellar Odyssey",
+    "genre": "Aventura",
+    "price": 399,
+    "featured": true,
+    "cover": "/juegos/stellar-odyssey.svg",
+    "description": "Explora planetas extraordinarios y resuelve misterios en una odisea espacial."
+  },
+  {
+    "id": "pixel-valley",
+    "name": "Pixel Valley",
+    "genre": "Indie",
+    "price": 199,
+    "featured": true,
+    "cover": "/juegos/pixel-valley.svg",
+    "description": "Cultiva, construye y conoce personajes inolvidables en un pueblo lleno de color."
+  },
+  {
+    "id": "kingdom-ember",
+    "name": "Kingdom of Ember",
+    "genre": "RPG",
+    "price": 549,
+    "featured": true,
+    "cover": "/juegos/kingdom-ember.svg",
+    "description": "Descubre un reino fantástico, explora sus regiones y elige tu camino."
+  },
+  {
+    "id": "ocean-blue",
+    "name": "Ocean Blue",
+    "genre": "Aventura",
+    "price": 259,
+    "featured": true,
+    "cover": "/juegos/ocean-blue.svg",
+    "description": "Descubre arrecifes, criaturas marinas y secretos de un inmenso océano."
+  },
+  {
+    "id": "galaxy-kart",
+    "name": "Galaxy Kart",
+    "genre": "Carreras",
+    "price": 349,
+    "featured": true,
+    "cover": "/juegos/galaxy-kart.svg",
+    "description": "Carreras arcade llenas de curvas, pistas cósmicas y diversión para todos."
+  },
+  {
+    "id": "mystic-woods",
+    "name": "Mystic Woods",
+    "genre": "Aventura",
+    "price": 169,
+    "featured": false,
+    "cover": "/juegos/mystic-woods.svg",
+    "description": "Resuelve acertijos y recorre senderos mágicos en un bosque encantado."
+  },
+  {
+    "id": "cloud-city",
+    "name": "Cloud City",
+    "genre": "Simulación",
+    "price": 429,
+    "featured": false,
+    "cover": "/juegos/cloud-city.svg",
+    "description": "Diseña una ciudad entre las nubes y gestiona sus barrios y habitantes."
+  },
+  {
+    "id": "circuit-lab",
+    "name": "Circuit Lab",
+    "genre": "Estrategia",
+    "price": 129,
+    "featured": false,
+    "cover": "/juegos/circuit-lab.svg",
+    "description": "Construye sistemas, conecta mecanismos y supera retos de lógica."
+  },
+  {
+    "id": "aurora-beats",
+    "name": "Aurora Beats",
+    "genre": "Música",
+    "price": 239,
+    "featured": false,
+    "cover": "/juegos/aurora-beats.svg",
+    "description": "Una experiencia de ritmo y color con escenarios dinámicos y melodías originales."
+  },
+  {
+    "id": "terra-builder",
+    "name": "Terra Builder",
+    "genre": "Simulación",
+    "price": 299,
+    "featured": false,
+    "cover": "/juegos/terra-builder.svg",
+    "description": "Construye paisajes, descubre recursos y crea un mundo a tu medida."
+  },
+  {
+    "id": "solar-puzzle",
+    "name": "Solar Puzzle",
+    "genre": "Indie",
+    "price": 89,
+    "featured": false,
+    "cover": "/juegos/solar-puzzle.svg",
+    "description": "Resuelve rompecabezas visuales y restaura el brillo de mundos luminosos."
+  }
+]

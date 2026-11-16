@@ -1,0 +1,30 @@
+@if (shop.cartOpen()) {<div class="modal-backdrop" (click)="close()" role="presentation"></div>
+<aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <header class="drawer-head">
+        <div>
+            <div class="section-kicker">TUS VIDEOJUEGOS</div>
+            <h2 id="cart-title">Mi carrito <span>({{ shop.cartCount() }})</span></h2>
+        </div><button class="icon-close" type="button" (click)="close()" aria-label="Cerrar carrito">×</button>
+    </header>
+    <div class="drawer-scroll">@if (shop.cartEntries().length) {@for (entry of shop.cartEntries(); track entry.game.id)
+        {<article class="cart-line"><img [src]="entry.game.cover" [alt]="'Portada de '+entry.game.name" width="82"
+                height="110">
+            <div class="cart-line-copy"><strong>{{ entry.game.name }}</strong><span>{{ entry.game.genre }}</span><b>{{
+                    shop.money(entry.game.price) }}</b>
+                <div class="quantity"><button type="button" (click)="shop.changeQuantity(entry.game.id,-1)"
+                        aria-label="Disminuir cantidad">−</button><span>{{ entry.quantity }}</span><button type="button"
+                        (click)="shop.changeQuantity(entry.game.id,1)" aria-label="Aumentar cantidad">+</button><button
+                        class="remove-link" type="button" (click)="shop.remove(entry.game.id)">Eliminar</button></div>
+            </div>
+        </article>}} @else {<div class="cart-empty">
+            <div class="empty-cart-art">▢</div>
+            <h3>Tu carrito está vacío</h3>
+            <p>Explora el catálogo y encuentra tu próxima partida.</p><a href="#catalogo" class="button button-green"
+                (click)="close()">Ver juegos</a>
+        </div>}</div>@if (shop.cartEntries().length) {<div class="cart-totals">
+        <div><span>Subtotal ({{ shop.cartCount() }} juegos)</span><strong>{{ shop.money(shop.total()) }}</strong></div>
+        <div class="total-line"><span>Total</span><strong>{{ shop.money(shop.total()) }}</strong></div><button
+            class="button button-green checkout" type="button" (click)="shop.clearCart()">Vaciar carrito
+            <span>×</span></button>
+    </div>}
+</aside>}

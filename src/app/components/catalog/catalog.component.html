@@ -1,0 +1,28 @@
+<section id="catalogo" class="catalog-zone shell" aria-labelledby="catalog-title">
+    <div class="section-title-row">
+        <div>
+            <div class="section-kicker">EXPLORA BEAR GAMES</div>
+            <h2 id="catalog-title">Encuentra tu próximo juego<span class="title-dot">.</span></h2>
+            <p>Videojuegos digitales de diferentes categorías, con precios fijos.</p>
+        </div><span class="catalog-count">{{ shop.filteredGames().length }} juegos</span>
+    </div>
+    <div class="catalog-filters">
+        <div class="genre-tabs" role="group" aria-label="Filtrar por categoría">@for (genre of genres; track genre)
+            {<button type="button" [class.active]="shop.genre()===genre" (click)="shop.genre.set(genre)">{{ genre
+                }}</button>}</div>
+        <div class="filter-controls"><label>Ordenar <select [value]="shop.sort()" (change)="changeSort($event)">
+                    <option value="featured">Recomendados</option>
+                    <option value="low">Menor precio</option>
+                    <option value="high">Mayor precio</option>
+                    <option value="name">Nombre A-Z</option>
+                </select></label><label class="price-slider">Precio máximo <strong>{{ shop.money(shop.maxPrice())
+                    }}</strong><input type="range" min="0" max="700" step="10" [value]="shop.maxPrice()"
+                    (input)="changePrice($event)"></label><button type="button" class="clear-filters"
+                (click)="shop.clearFilters()">Limpiar filtros</button></div>
+    </div>@if (shop.filteredGames().length) {<div class="game-grid">@for (game of shop.filteredGames(); track game.id)
+        {<app-game-card [game]="game" />}</div>} @else {<div class="empty-results">
+        <h3>No encontramos juegos con esos filtros</h3>
+        <p>Prueba otra categoría o precio.</p><button type="button" class="button button-green"
+            (click)="shop.clearFilters()">Mostrar todos los juegos</button>
+    </div>}
+</section>

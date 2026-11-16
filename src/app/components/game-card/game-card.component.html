@@ -1,0 +1,13 @@
+<article class="game-card"><button type="button" class="game-image-button"
+        [attr.aria-label]="'Ver detalles de ' + game().name" (click)="shop.detail.set(game())"><img class="game-cover"
+            [src]="game().cover" [alt]="'Portada de '+game().name" width="420" height="560" loading="lazy"><span
+            class="game-card-overlay">Ver detalles <span aria-hidden="true">↗</span></span></button>
+    <div class="game-info">
+        <div class="game-platform"><span class="platform-dot"></span>{{ game().genre }}</div><button type="button"
+            class="game-name-button" (click)="shop.detail.set(game())">{{ game().name }}</button>
+        <p class="game-description">{{ game().description }}</p>
+        <div class="game-price-row"><span class="current-price">{{ shop.money(game().price) }}</span></div><button
+            type="button" class="add-to-cart" (click)="shop.add(game())">Agregar al carrito <span
+                aria-hidden="true">+</span></button>
+    </div>
+</article>
